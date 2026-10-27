@@ -38,6 +38,9 @@ def neighbor_joining (distance matrix, id list)
   Produce the final string that will be returned
 
 ```
+Citations:
+https://primerdigital.com/tools/phylo.html
+This website was used to test our code and see how it compares to a publicly available neighbor joining algorithm. I fed it the data file and compared our produced tree to this. There were some differences that I couldn't explain myself but the result seemed extremely close that we decided it was good enough
 
 AI usage:
 Ahmed Salman - Claude AI (Sonnet 5.5) was used to understand how to use 3 specific functions: `np.fill_diagonal`, `np.stack` and the v and h versions, and lastly `array.reshape`. Prompts used are:
