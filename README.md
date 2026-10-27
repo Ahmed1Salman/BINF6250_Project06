@@ -38,3 +38,9 @@ def neighbor_joining (distance matrix, id list)
   Produce the final string that will be returned
 
 ```
+
+AI usage:
+Ahmed Salman - Claude AI (Sonnet 5.5) was used to understand how to use 3 specific functions: `np.fill_diagonal`, `np.stack` and the v and h versions, and lastly `array.reshape`. Prompts used are:
+"How to prevent `array.min` from selecting anything in the diagonal of a symmetrical numpy array in python?". This lead to `np.fill_diagonal`. 
+"How to use `np.stack` to add a row or column to an existing array?". This lead to `np.vstack` and `np.hstack`. `np.stack` only takes the arrays you feed it without altering it and so it requires the inputs to already be 2d arrays if you are planning on adding them as columns. `np.vstack` automatically converts 1d arrays to 2d arrays and works on them, allowing me to shorten my code and "skip" a step.
+For `array.reshape` I simply pasted the error I kept receiving after trying to run the code. Claude suggested using this which worked similarily to `np.vstack` and `np.hstack` but without adding anything, simply converting the current 1d array to a 2d array.
