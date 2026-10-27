@@ -99,7 +99,7 @@ def read_fasta(filename):
     #3. Give back the dictionary
     return sequences
 ```
-2. Score two sequences (adapted from Project 05: same fill loop and cell logic as `cal_score()`; traceback, printing, and random tie-break removed because only the score is needed)
+2. Score two sequences (adapted from Project 05: same fill loop and cell logic as `cal_score()`; traceback, printing, and random tie-break removed because only the score is needed)\
 a. Raw similarity (number)
 ```
 def raw_smith_waterman(seq1, seq2, match_score=2.0, mismatch_penalty=-1.0, gap_penalty=-1.0):
@@ -125,7 +125,7 @@ def raw_smith_waterman(seq1, seq2, match_score=2.0, mismatch_penalty=-1.0, gap_p
     #3. The score is the BIGGEST cell anywhere in the grid, tie-break do not matter here
     return the biggest number in score_matrix
 ```
-b. Normalized similarity (%) 
+b. Normalized similarity (%) \
 *Note: This is a simple normalization design choice I had picked after compared it with AI provided Feng & Doolittle (1987) approach's code. See notebook for detail but as for reasoning, I added check_distance_properties() using the criterias in the slide (refered in ### Distance transformation section of this README file). The result is saying Feng & Doolittle has Triangle inequality violations where the simple version doesn't so we went with that one. 
 ```
 def smith_waterman(sequence1, sequence2, match_score=2.0, mismatch_penalty=-1.0, gap_penalty=-1.0):
