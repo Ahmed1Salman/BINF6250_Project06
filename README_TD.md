@@ -294,10 +294,18 @@ Meeting as a group really helped. We aligned on the math and went through the ad
 I really liked that our individual versions turned out different this time. I went in assuming recursion was the way to build the Newick string, because of the tree’s shape, even though we’d discussed in Project 04’s peer review that Python might discourage recursion for a reason. Ahmed went iterative and got the exact same tree. Recursion is fine for our 20 sequences, but his approach avoids Python’s recursion limit on much bigger or lopsided trees, so I think his is the safer choice.
 
 I also learned to test my choices instead of just picking them. I was curious about the Feng & Doolittle (1987) approach the assignment points to, so I had Claude write that version and ran both through the distance rules from the Module 06 slides (check_distance_properties()). Feng & Doolittle had 114 triangle-inequality violations and the simple version had none, so we went with the simple one. Both still gave the same tree, so the choice didn’t change our result.
-# Generative AI Appendix
+# Appendix
 **Generative AI:**\
 Trang Do: I used Claude Opus 5.5 (Anthropic) to help me understand the algorithms after reading the slides and the starter notebook. To test my understanding, I had it generate a small example (a 4-sequence toy dataset) that I worked through by hand: the Smith-Waterman grid, the distance table, and each round of neighbor joining. I also had it explain the Newick format and how to build a Newick string from the finished tree.
 For similarity normalization: I tried two approaches: a simple normalization (score ÷ √(self-score × self-score), then distance = 1 − similarity), and the Feng & Doolittle (1987) approach the assignment points to (correcting for self-scores and shuffled sequences, then −ln). I had Claude wrote code Feng & Doolittle version and then provided the properties of a distance check from our Module 6 slides and had it wrote check_distance_properties(), comapre and then chose (detailed above). 
-**Citations**\
 
+Northeastern university AI usage: Ahmed Salman - Claude AI (Sonnet 5.5) was used to understand how to use 3 specific functions: np.fill_diagonal, np.stack and the v and h versions, and lastly array.reshape. Prompts used are: "How to prevent array.min from selecting anything in the diagonal of a symmetrical numpy array in python?". This lead to np.fill_diagonal. "How to use np.stack to add a row or column to an existing array?". This lead to np.vstack and np.hstack. np.stack only takes the arrays you feed it without altering it and so it requires the inputs to already be 2d arrays if you are planning on adding them as columns. np.vstack automatically converts 1d arrays to 2d arrays and works on them, allowing me to shorten my code and "skip" a step. For array.reshape I simply pasted the error I kept receiving after trying to run the code. Claude suggested using this which worked similarily to np.vstack and np.hstack but without adding anything, simply converting the current 1d array to a 2d array.
+
+**Citations:**
+
+https://primerdigital.com/tools/phylo.html This website was used to test our code and see how it compares to a publicly available neighbor joining algorithm. I fed it the data file and compared our produced tree to this. There were some differences that I couldn't explain myself but the result seemed extremely close that we decided it was good enough
+
+https://pypi.org/project/textdistance/ This is a link to the textdistance module which was our start to using the smith waterman algorithm. While we elected to not use it as it made custom scoring too confusing, it is still a very useful tool.
+
+https://northeastern.instructure.com/courses/258605/files/44807127/download?download_frd=1 This is Northeastern's Computational biology module explaining the neighbor joining algorithm step by step. Our code is basically just a python version of this
 
