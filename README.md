@@ -42,6 +42,13 @@ Citations:
 https://primerdigital.com/tools/phylo.html
 This website was used to test our code and see how it compares to a publicly available neighbor joining algorithm. I fed it the data file and compared our produced tree to this. There were some differences that I couldn't explain myself but the result seemed extremely close that we decided it was good enough
 
+https://pypi.org/project/textdistance/
+This is a link to the textdistance module which was our start to using the smith waterman algorithm. While we elected to not use it as it made custom scoring too confusing, it is still a very useful tool.
+
+https://northeastern.instructure.com/courses/258605/files/44807127/download?download_frd=1
+This is Northeastern's Computational biology module explaining the neighbor joining algorithm step by step. Our code is basically just a python version of this
+
+Northeastern university 
 AI usage:
 Ahmed Salman - Claude AI (Sonnet 5.5) was used to understand how to use 3 specific functions: `np.fill_diagonal`, `np.stack` and the v and h versions, and lastly `array.reshape`. Prompts used are:
 "How to prevent `array.min` from selecting anything in the diagonal of a symmetrical numpy array in python?". This lead to `np.fill_diagonal`. 
