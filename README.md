@@ -22,6 +22,19 @@ def build_distance_matrix (sequence dictionary)
   loop through the matrix and add smith waterman scores for every position based on sequences compared
   return sequence matrix, ids
 
-
+def neighbor_joining (distance matrix, id list)
+  Copy matrix to avoid destruction of original, increases the memory usage heavily, so remove if needed.
+  Extract node names from labels list by removing extra information
+  Loop through the nodes while the matrix shape is more than 2x2
+  Sum rows from original matrix
+  Calculate first D* iteration
+  Replace the zeros in the diagonal with a very large number to prevent the min function from picking the diagonal.
+  Min function to pick lowest value in matrix
+  Calculate delta between nodes, and then limb lengths
+  Calculate the distances between the new node created above with the rest of the matrix then add the new distances to the matrix
+  Delete the nodes that have already been merged from the matrix
+  Append the new name to the list, then remove the old names from the list based on index
+  Subtract 1 from the number of nodes and repeat the process for all iterations
+  Produce the final string that will be returned
 
 ```
